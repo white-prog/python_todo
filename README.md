@@ -29,14 +29,9 @@ Create a command-line todo list application that helps users manage their tasks.
 4. Test your implementation
 
 ## Evaluation
-Your code will be evaluated on:
 - Functionality
 - Code organization
 - Error handling
 - Documentation
 
-## Submission
-Submit your completed code via pull request by [DUE DATE]
 
-## Questions?
-Contact [MANAGER NAME] for any clarification needed.
