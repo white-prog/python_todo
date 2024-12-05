@@ -41,14 +41,43 @@ class TodoList:
 
 def main():
     # Implement your command line interface here
-    todo = TodoList()
-    todo.add_task("Play football")
-    todo.add_task("Study law")
-    todo.add_task("Hear music")
+    print("Welcome to Todo3.0!!")
+    print("commands : uses")
+    print("ts \"todo\" :  to add a task")
+    print("exit : to get out from window")
+    print("dl \"todo_id\" : for delete task")
+    print("cp \"todo_id\" : for marking task as complete")
+    print("view : to view todo")
+    tasks = TodoList()
+    while True:
+        command = input("user $>> ")
+        if command == "exit":
+            print("Thank you")
+            break
+        elif command[0:2] == "ts":
+            tasks.add_task(command[3:])
+            print("item added successfully")
+        elif command[0:2] == "dl":
+            tasks.delete_task(int(command[3:]) - 1)
+            print("item deleted successfully")
+        elif command[0:2] == "cp":
+            tasks.complete_task(int(command[3:]) - 1)
+            print("status updated")
+        elif command == "view":
+            cnt = 1
+            print("todo_id-----------------------------task-------------------------------status")
+            print("_____________________________________________________________________________")
+            for i in tasks.view_tasks():
+                print(str(cnt) + "---------|--------" + i[0] + "---------|---------" + str(i[1]))
+                cnt += 1
+            print("_____________________________________________________________________________")
+        else:
+            print("command is not recognizable - 404")
 
-    todo.delete_task(2)
-    todo.complete_task(0)
-    print(todo.view_tasks())
+
+
+
+
 
 
 
